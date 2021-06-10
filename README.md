@@ -1,4 +1,4 @@
-##Calculator with simple interface
+Calculator with simple interface
 
 Making a simple interface calculator with the PyQt5 module
 
