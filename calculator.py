@@ -8,61 +8,61 @@ class MainForm(QMainWindow):
 
           self.setWindowTitle("Calculator")
           self.setGeometry(200,200,500,500)
-          self.setWindowIcon(QtGui.QIcon('indir.png'))
+          self.setWindowIcon(QtGui.QIcon('download.png'))
           self.initUI()
      def initUI(self):
-          self.lbl_sayi1 = QtWidgets.QLabel(self)
-          self.lbl_sayi1.setText('Enter number 1: ')
-          self.lbl_sayi1.move(50,30)
+          self.lbl_number1 = QtWidgets.QLabel(self)
+          self.lbl_number1.setText('Enter number 1: ')
+          self.lbl_number1.move(50,30)
 
-          self.txt_sayi1 = QtWidgets.QLineEdit(self)
-          self.txt_sayi1.move(150,30)
-          self.txt_sayi1.resize(200,32)
+          self.txt_number1 = QtWidgets.QLineEdit(self)
+          self.txt_number1.move(150,30)
+          self.txt_number1.resize(200,32)
 
-          self.lbl_sayi2 = QtWidgets.QLabel(self)
-          self.lbl_sayi2.setText('Enter number 2: ')
-          self.lbl_sayi2.move(50,80)
+          self.lbl_number2 = QtWidgets.QLabel(self)
+          self.lbl_number2.setText('Enter number 2: ')
+          self.lbl_number2.move(50,80)
 
-          self.txt_sayi2 = QtWidgets.QLineEdit(self)
-          self.txt_sayi2.move(150,80)
-          self.txt_sayi2.resize(200,32)
+          self.txt_number2 = QtWidgets.QLineEdit(self)
+          self.txt_number2.move(150,80)
+          self.txt_number2.resize(200,32)
 
-          self.btn_topla = QtWidgets.QPushButton(self)
-          self.btn_topla.setText("Addition")
-          self.btn_topla.move(150,130)
-          self.btn_topla.clicked.connect(self.hesapla)
+          self.btn_addition = QtWidgets.QPushButton(self)
+          self.btn_addition.setText("Addition")
+          self.btn_addition.move(150,130)
+          self.btn_addition.clicked.connect(self.calculate)
 
-          self.btn_cikar = QtWidgets.QPushButton(self)
-          self.btn_cikar.setText("Subtraction")
-          self.btn_cikar.move(150,170)
-          self.btn_cikar.clicked.connect(self.hesapla)
+          self.btn_subtraction = QtWidgets.QPushButton(self)
+          self.btn_subtractionr.setText("Subtraction")
+          self.btn_subtraction.move(150,170)
+          self.btn_subtraction.clicked.connect(self.calculate)
 
-          self.btn_carp = QtWidgets.QPushButton(self)
-          self.btn_carp.setText("Multiplication")
-          self.btn_carp.move(150,210)
-          self.btn_carp.clicked.connect(self.hesapla)
+          self.btn_multiplication = QtWidgets.QPushButton(self)
+          self.btn_multiplication.setText("Multiplication")
+          self.btn_multiplication.move(150,210)
+          self.btn_multiplication.clicked.connect(self.calculate)
 
-          self.btn_bol = QtWidgets.QPushButton(self)
-          self.btn_bol.setText("Division")
-          self.btn_bol.move(150,250)
-          self.btn_bol.clicked.connect(self.hesapla)
+          self.btn_division = QtWidgets.QPushButton(self)
+          self.btn_division.setText("Division")
+          self.btn_division.move(150,250)
+          self.btn_division.clicked.connect(self.calculate)
 
-          self.lbl_sonuc = QtWidgets.QLabel(self)
-          self.lbl_sonuc.setText('Result: ')
-          self.lbl_sonuc.move(150,290)
-     def hesapla(self):
+          self.lbl_result = QtWidgets.QLabel(self)
+          self.lbl_result.setText('Result: ')
+          self.lbl_result.move(150,290)
+     def calculate(self):
           sender = self.sender().text()
           result = 0
-          if sender == 'Toplama':
+          if sender == 'Addition':
                result = int(self.txt_sayi1.text()) + int(self.txt_sayi2.text())
                
-          elif sender == 'Çıkarma':
+          elif sender == 'Subtraction':
                result = int(self.txt_sayi1.text()) - int(self.txt_sayi2.text())
                
-          elif sender == 'Bölme':
+          elif sender == 'Division':
                result = int(self.txt_sayi1.text()) / int(self.txt_sayi2.text())
                
-          elif sender == 'Çarpma':
+          elif sender == 'Multiplication':
                result = int(self.txt_sayi1.text()) * int(self.txt_sayi2.text())
           
           self.lbl_sonuc.setText('Sonuç: '+ str(result))
